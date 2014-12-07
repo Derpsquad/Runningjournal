@@ -1,0 +1,32 @@
+<template name = "settings">
+    
+    <h1 id = "settings-header">Settings</h1>
+    
+    <div id = "units-div">
+    
+        <div id = "units-label">
+        
+            <h3>Units:</h3>
+        
+        </div>
+        
+        <div id = "units-buttons">
+            <ul class="nav nav-pills" id = "time-select">
+                {{#if isMetric}}
+                <li role="presentation"><a href="#" a data-toggle="tab" class = "miles">Miles</a></li>
+                <li role="presentation" class="active"><a data-toggle="tab" href="#" class = "kilometers">Kilometers</a></li> 
+                {{else}}
+                <li role="presentation" class="active"><a href="#" a data-toggle="tab" class = "miles">Miles</a></li>
+                <li role="presentation"><a data-toggle="tab" href="#" class = "kilometers">Kilometers</a></li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+    
+    <div id = "save-cancel">
+        <div>
+            <a class = "solo-button" id = "back-button">Home</a>
+        </div>
+    </div>
+
+</template>

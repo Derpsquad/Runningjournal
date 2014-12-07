@@ -1,0 +1,25 @@
+<template name = "journal">
+    
+    <header>
+    
+        <h1 id = "welcome-msg">Your Runs</h1>
+
+    </header>
+
+    <ul class="nav nav-pills" id = "time-select">
+        <li role="presentation" class="active"><a href="#" a data-toggle="tab" class = "week">This Week</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#" class = "month">This Month</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#" class = "all">All</a></li>
+    </ul>
+
+    <ul id = "entry-list">
+        {{#each entries}}
+            {{> entry}}
+        {{/each}}
+
+    </ul>
+    
+
+    <p align = "center" id = "totalDistance">Total: {{totalDistance}} {{units}}</p>
+    
+</template>

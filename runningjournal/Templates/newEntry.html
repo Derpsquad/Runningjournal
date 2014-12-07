@@ -1,0 +1,30 @@
+<template name = "newEntry">
+
+    <h1 id = "new-entry-header">How far did you run today?</h1>
+    
+    <div id = "form-div">
+        {{#if invalidInput}}
+            <h6 id = "invalid-number">Enter a number</h6>
+        {{else}}
+            <h6 id = "invalid-number" class = "hidden"></h6>
+        {{/if}}
+        <form class = "new-entry"> 
+            <div class = "entry-wrapper">
+                <input name = "text" id = "distance-input"/>
+                <p>{{units}}</p>
+            </div>
+        </form>
+    </div>
+        
+        
+    
+    
+    <div id = "save-cancel">
+        <div>
+            <a class = "first-button" id = "submit-entry">Submit</a>
+            <a id = "back-button">Home</a>
+        </div>
+    </div>
+    
+
+</template>

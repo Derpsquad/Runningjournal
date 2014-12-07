@@ -1,0 +1,32 @@
+<template name = "content2">
+    <div class = "content-container">
+        <header>
+            <h1 id = "welcome-msg">Your Runs</h1>
+            
+            <form class = "new-entry">
+
+                <div class = "form-horizontal">  
+                    <input type = "number" name = "text" placeholder="How far did you run today?" id = "distance-input"/>
+
+                    <input class = "btn" type = "radio" name = "units" value = "miles" checked id = "miles"/> Miles
+                    <input class = "btn" type = "radio" name = "units" value = "kilometers" id = "kilometers"/> Kilometers
+                </div>
+            </form>
+
+        </header>
+
+        <ul class="nav nav-pills" id = "time-select">
+            <li role="presentation" class="active"><a href="#" a data-toggle="tab" class = "week">This Week</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#" class = "month">This Month</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#" class = "all">All</a></li>
+        </ul>
+
+        <ul id = "entry-list">
+            {{#each entries}}
+                {{> entry}}
+            {{/each}} 
+        </ul>
+
+        <p align = "center">Total: {{totalDistance}} {{units}}</p>
+    </div>
+</template>

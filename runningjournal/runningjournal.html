@@ -1,0 +1,87 @@
+<head>
+  <title>runningjournal</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  {{#if currentUser}} <!-- If the user is logged in, display the journal-->
+  <div class="container">
+      
+      {{#if editSettings}}
+      
+          <div class = "menu">
+              {{> loggedInMenu}}
+          </div>
+      
+          <div class = "content-container">
+              {{> settings}}
+          </div>
+      
+      {{else}}
+      
+          {{#if addEntry}}
+              <div class = "menu">
+                {{> loggedInMenu}}
+              </div>
+      
+              <div class = "content-container">
+                  {{> newEntry}}
+            
+              </div>
+            
+      
+          {{else}}
+              <div class = "menu">
+                {{> loggedInMenu}}
+              </div>
+
+              <div class = "content-container">
+                {{> journal}}
+              </div>
+          {{/if}}
+      
+      {{/if}}
+  </div>
+    
+  {{else}} <!-- If not, check if they're trying to signup-->
+      {{#if signup}}
+
+        <div class = "container">
+            <div class = "menu">
+
+                {{> loggedOutMenu}}
+
+            </div>
+
+            <div class = "content-container">
+                
+
+
+
+                {{> register}}
+
+                <a href = "#" id = "login-link">Already have an account? Log in here</a>
+
+            </div>
+
+           </div>
+
+        {{else}}<!--If not signing up, display login menu-->
+        <div class = "container">
+
+            <div class = "menu">
+              {{> loggedOutMenu}}
+            </div>
+
+            <div class = "content-container">
+                {{> login}}
+            </div>
+
+
+        </div>
+
+        {{/if}}
+
+
+  {{/if}}
+</body>

@@ -1,0 +1,25 @@
+<template name = "login">
+    
+    <h1 id = "title-auth">Sign in</h1>
+    <h6 id = "title-auth-desc">Sign in to view your progress</h6>
+    
+    {{#if loginFailed}}
+        <h6 id = "login-failed">Invalid login details</h6>
+    {{/if}}
+    
+    <form role="form" id = "login-form">
+        <div class="form-group">
+            <input type = "text" class="form-control" id="login-user" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="login-password" placeholder="Password">
+        </div>
+        <div class = "form-submit">
+            <button id = "submit-button">Sign In</button>
+        </div>
+     </form>
+    
+    <a href = "#" id = "signup-link">Need an account? Sign up here</a>
+    
+    
+</template>
